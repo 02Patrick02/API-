@@ -18,7 +18,10 @@ namespace API_Template
             IRestResponse response = client.Execute(request);
             String content = response.Content;
             Root menu = JsonConvert.DeserializeObject<Root>(content);
-            Console.WriteLine(menu.nobelPrizes[0].laureates[0].knownName.en);
+            for(int i = 0; i < menu.nobelPrizes.Count; i++)
+            {
+                Console.WriteLine(menu.nobelPrizes[i].laureates[0].knownName.en);
+            }
         }
 
 
